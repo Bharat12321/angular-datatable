@@ -6,7 +6,7 @@ import { DataTableDirective } from 'angular-datatables';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements  OnInit{
-  @ViewChild(DataTableDirective, {static: false})
+  @ViewChild(DataTableDirective,)
   datatableElement: DataTableDirective;
   title = 'final-app';
   dtOptions: DataTables.Settings = {};
