@@ -1,0 +1,34 @@
+
+<h2>Table functionality</h2>
+<div>
+  <select [(ngModel)]="selectedKey">
+      <option *ngFor="let key of tablekeys" [value]="key.title" [selected]="key.title == true">{{key.data}}</option>
+  </select>
+  <input type="text" [(ngModel)]="selectedSearch"/>
+  <button (click)="onSearch()">Search</button>
+</div>
+<table datatable [dtOptions]="dtOptions" class="row-border hover">
+    <thead>
+        <tr>
+          <th>ID</th>
+          <th>First</th>
+          <th>Middle</th>
+          <th>Last</th>
+          <th>Sex</th>
+          <th>Age</th>
+          <th>Hair Colour</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let datum of data">
+          <td>{{ datum.ID }}</td>
+          <td>{{ datum['First'] }}</td>
+          <td>{{datum['Middle']}}</td>
+          <td>{{ datum['Last'] }}</td>
+          <td>{{ datum['Sex'] }}</td>
+          <td>{{ datum['Age'] }}</td>
+          <td>{{ datum['Hair Colour'] }}</td>
+        </tr>
+      </tbody>
+</table>
+
